@@ -1,0 +1,12 @@
+#tolov_body {
+    -fx-background-image: url("../img/sample.png");
+}
+#tb3_colmns{
+	-fx-border-color: #ffffff;
+}
+#btn_tolov{
+	-fx-background-image: url("../img/unnamed.png");
+	-fx-background-size: 83%;
+	-fx-background-position: center center;
+	-fx-background-repeat: no-repeat;
+}

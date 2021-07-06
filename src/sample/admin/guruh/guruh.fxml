@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="guruh_background" prefHeight="730.0" prefWidth="1350.0" stylesheets="@../../../css/group.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.guruh.Guruh">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="-8.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="edt_search" layoutX="39.0" layoutY="18.0" onKeyReleased="#search" prefHeight="40.0" prefWidth="939.0" promptText="Qidiruv..." AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Button layoutX="1001.0" layoutY="10.0" mnemonicParsing="false" onAction="#open_insert_panel" opacity="0.9" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #61F6F2 0%,#1656EF);" styleClass="guruh_opacity" text="Qo'shish" textFill="WHITE" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TableView fx:id="tb_group" layoutX="29.0" layoutY="61.0" onMouseClicked="#click_table" prefHeight="315.0" prefWidth="1302.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="61.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="76.00003051757812" styleClass="colmns" text="№" />
+                <TableColumn fx:id="guruh_name" prefWidth="155.0" sortable="false" styleClass="colmns" text="GURUH" />
+                  <TableColumn fx:id="fan_id" prefWidth="139.0" sortable="false" styleClass="colmns" text="FAN" />
+                  <TableColumn fx:id="teacher_id" prefWidth="208.0" sortable="false" styleClass="colmns" text="GURUH_RAXBAR" />
+                  <TableColumn fx:id="narx" prefWidth="106.0" sortable="false" text="NARX" />
+              </columns>
+            </TableView>
+            <Button layoutX="1151.0" layoutY="10.0" mnemonicParsing="false" onAction="#open_edit_panel" opacity="0.9" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #F6C961 0%,#E53C05);" styleClass="guruh_opacity" text="Taxrirlash" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane fx:id="panel_insert" layoutX="29.0" layoutY="386.0" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: #ffffff; -fx-border-color: #CDCDCD; -fx-border-radius: 2;">
+               <children>
+                  <TextField fx:id="edt_insert_group_name" layoutX="35.0" layoutY="33.0" prefHeight="40.0" prefWidth="0.0" promptText="Guruh nomi" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="33.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="cBox_insert_fan" layoutX="36.0" layoutY="85.0" onAction="#getSpecialTeacher" prefHeight="40.0" prefWidth="150.0" promptText="Fanni tanlang" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" />
+                  <ComboBox fx:id="cBox_insert_teacher" layoutX="34.0" layoutY="137.0" onAction="#selectTeacher" prefHeight="40.0" prefWidth="150.0" promptText="O'qtuvchini Tanlang" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="34.0" />
+                  <Button fx:id="btn_insert" layoutX="175.0" layoutY="246.0" mnemonicParsing="false" onAction="#insert_group" opacity="0.9" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #324BA7 0%, #42BFF5); -fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 16px;" styleClass="guruh_opacity" text="Saqlash">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lb_insert_info" layoutX="22.0" layoutY="286.0" prefHeight="30.0" text=".." AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" />
+                  <Button layoutX="338.0" layoutY="18.0" mnemonicParsing="false" onAction="#hide_insert_panel" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 1px 0 10px; -fx-border-radius: 0 1px 0 10px; -fx-border-color: #E5E5E5;" styleClass="chiqish1" text="X" textFill="#dbdbdb" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_teacher_id" layoutX="424.0" layoutY="212.0" text="teacher_id" visible="false" />
+                  <TextField fx:id="edt_tolov" layoutX="35.0" layoutY="192.0" prefHeight="40.0" prefWidth="150.0" promptText="Oylik to'lovni kiriting" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_edit_group" layoutX="551.0" layoutY="386.0" prefHeight="330.0" prefWidth="750.0" style="-fx-background-color: #ffffff; -fx-border-color: #CDCDCD; -fx-border-radius: 2;">
+               <children>
+                  <TextField fx:id="edt_editGroup_name" layoutX="26.0" layoutY="29.0" prefHeight="40.0" promptText="Guruh nomi" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="29.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="cBox_edit_fan" layoutX="319.0" layoutY="84.0" onAction="#edit_new_fan" prefHeight="40.0" prefWidth="380.0" promptText="Fanni Tanlang" AnchorPane.leftAnchor="318.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="83.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <ComboBox fx:id="cBox_edit_teacher" layoutX="320.0" layoutY="142.0" onAction="#edit_new_teacher" prefHeight="40.0" prefWidth="378.0" promptText="O'qituvchini tanlang" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="141.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <Button layoutX="458.0" layoutY="246.0" mnemonicParsing="false" onAction="#update_group" opacity="0.9" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom ,#E53C05 0%, #F6C961 ); -fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 16px;" styleClass="guruh_opacity" text="Amalga oshirish" AnchorPane.topAnchor="246.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_edit_info" layoutX="26.0" layoutY="286.0" prefHeight="30.0" prefWidth="280.0" text=".." textFill="RED" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="77.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lb_new_fan" layoutX="29.0" layoutY="84.0" prefHeight="40.0" prefWidth="281.0" text="-----" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="442.0" AnchorPane.topAnchor="84.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lb_new_teacher" layoutX="27.0" layoutY="142.0" prefHeight="40.0" prefWidth="277.0" text="-----" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="142.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="310.0" layoutY="14.0" mnemonicParsing="false" onAction="#hide_edit_panel" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 1px 0 10px; -fx-border-radius: 0 1px 0 10px; -fx-border-color: #E5E5E5;" styleClass="chiqish1" text="X" textFill="#dbdbdb" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lb_first_teacherID" layoutX="11.0" layoutY="193.0" prefHeight="17.0" prefWidth="66.0" text="teсher_id" visible="false" />
+                  <Label fx:id="lb_temp_guruhID" layoutX="321.0" layoutY="185.0" text="guruhID" visible="false" />
+                  <Label fx:id="lb_frist_fanID" layoutX="315.0" layoutY="202.0" prefHeight="17.0" prefWidth="66.0" text="lb_firs_fanID" visible="false" />
+                  <Label fx:id="lb_first_gurhName" layoutX="309.0" layoutY="226.0" prefHeight="17.0" prefWidth="66.0" text="firstGurhName" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lb_new_amount" layoutX="27.0" layoutY="190.0" prefHeight="40.0" prefWidth="277.0" text="-----" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="190.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="edt_new_amount" layoutX="318.0" layoutY="190.0" prefHeight="40.0" prefWidth="378.0" promptText="Yangi to'lov miqdorini kiriting" AnchorPane.leftAnchor="317.0" AnchorPane.rightAnchor="55.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="lb_first_amount" layoutX="417.0" layoutY="40.0" text="lb_first_amount" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

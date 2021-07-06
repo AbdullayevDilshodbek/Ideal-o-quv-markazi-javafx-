@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="maosh_body" prefHeight="600.0" prefWidth="700.0" stylesheets="@../../../css/maosh.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.maosh.Maosh">
+   <children>
+      <TextField fx:id="edt_search" layoutX="14.0" layoutY="14.0" onKeyReleased="#search" opacity="0.8" prefHeight="31.0" prefWidth="382.0" promptText="O'QUVCHI F.I.SH..." />
+      <ComboBox fx:id="cbox_fan" layoutX="14.0" layoutY="56.0" onAction="#put_teacherToCbox" prefHeight="30.0" prefWidth="111.0" promptText="FAN" style="-fx-background-color: linear-gradient(to right bottom ,#54C0A6,#3DABA8);" />
+      <ComboBox fx:id="cbox_teacher" layoutX="135.0" layoutY="56.0" onAction="#put_group" prefHeight="30.0" prefWidth="165.0" promptText="O'QITUVCHI" style="-fx-background-color: linear-gradient(to right bottom ,#54C0A6,#3DABA8); -fx-fill: #FFFFFF;" />
+      <ComboBox fx:id="cbox_group" disable="true" layoutX="306.0" layoutY="56.0" onAction="#sotr_group" prefHeight="30.0" prefWidth="89.0" promptText="GURUH" />
+      <TableView fx:id="tb_view" layoutX="14.0" layoutY="100.0" opacity="0.8" prefHeight="397.0" prefWidth="671.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="id" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn fx:id="tr" prefWidth="46.99998474121094" text="№" />
+          <TableColumn fx:id="oquvchi" prefWidth="184.0" text="O'QUVCHI" />
+            <TableColumn fx:id="fan" prefWidth="83.0" text="FAN" />
+            <TableColumn fx:id="oqituvchi" prefWidth="114.0" text="O'QITUVCHI" />
+            <TableColumn fx:id="guruh" prefWidth="81.0" text="GURUH" />
+            <TableColumn fx:id="tolov" prefWidth="73.0" text="TO'LOV" />
+            <TableColumn fx:id="sana" prefWidth="88.0" text="SANA" />
+            <TableColumn fx:id="status" minWidth="0.0" prefWidth="0.0" text="STATUS" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="508.0" mnemonicParsing="false" onAction="#printToExcel" onMouseExited="#hoverExit_tolov" opacity="0.79" prefHeight="83.0" prefWidth="184.0" style="-fx-border-radius: 20; -fx-background-color: linear-gradient(to right bottom ,#619F0B,#41AFA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" styleClass="excel" text="EXCEL GA O'TKAZISH" textFill="#eeebeb" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="checkBox" layoutX="495.0" layoutY="76.0" mnemonicParsing="false" onAction="#checkBox" opacity="0.8" text="Barcha to'lovlarni ko'rish">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="205.0" layoutY="508.0" text="FAN" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="205.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="205.0" layoutY="525.0" text="O'QITUVCHI :" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="205.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="205.0" layoutY="541.0" text="SUMMA :" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="205.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="205.0" layoutY="558.0" text="MIQDOR :" AnchorPane.bottomAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="205.0" layoutY="578.0" text="MAOSH :" underline="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="205.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_fan" layoutX="300.0" layoutY="508.0" text="lb_fan" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_teacher" layoutX="300.0" layoutY="525.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_summa" layoutX="300.0" layoutY="541.0" text="lb_summa" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_miqdor" layoutX="300.0" layoutY="558.0" text="lb_miqdor" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_maosh" layoutX="300.0" layoutY="578.0" text="lb_maosh" textFill="#ff0009" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img_tolov" fitHeight="60.0" fitWidth="89.0" layoutX="562.0" layoutY="522.0" onMouseClicked="#tolov" onMouseEntered="#hover_tolov" onMouseExited="#hoverExit_tolov" opacity="0.8" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.9), 10, 0, 0, 0);" AnchorPane.bottomAnchor="33.5" AnchorPane.rightAnchor="49.0">
+         <image>
+            <Image url="@../../../img/tolov.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="566.0" layoutY="568.0" opacity="0.64" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 1, 0, 0, 0);" text="To'lov qilish" textFill="#1b651d" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="53.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

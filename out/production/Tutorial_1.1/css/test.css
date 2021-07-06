@@ -1,0 +1,27 @@
+/* Default row background is black */
+.table-row-cell {
+    -fx-background-color: black;
+}
+
+/* Text in the rows will be white */
+.table-row-cell .text {
+       -fx-fill: white ;
+}
+
+/*
+Pseudo class 'up' will change the row background
+ color to green when activated 
+ */
+.table-row-cell:up 
+{
+    -fx-background-color: #007054; 
+}
+
+/*
+Pseudo class 'down' will change the row background 
+color to red when activated
+*/
+.table-row-cell:down {
+    -fx-background-color: #A30029;
+}
+

@@ -1,0 +1,12 @@
+.admin_menu {
+    -fx-background-image: url("../img/sample.png");
+}
+#top_menu{
+	/*-fx-effect: linear-gradient(to right bottom ,#54C0A6,#3DABA8)s;*/
+    /*-fx-background-color:#2D74E6;*/
+}
+.button{
+   /* -fx-border-color: rgb(0, 0, 0);
+    -fx-background-color: #2D74E6;
+    -fx-text-fill: rgb(255, 255, 255);
+*/}

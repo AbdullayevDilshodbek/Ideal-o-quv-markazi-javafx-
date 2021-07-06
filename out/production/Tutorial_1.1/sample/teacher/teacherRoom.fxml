@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="body" prefHeight="670.0" prefWidth="1340.0" stylesheets="@../../css/adminDavomad.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.teacher.TeacherRoom">
+   <children>
+      <TextField fx:id="search" layoutX="16.0" layoutY="127.0" onKeyReleased="#search" prefHeight="25.0" prefWidth="369.0" promptText="F.I.SH" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="127.0" />
+      <ComboBox fx:id="cbox_sort" layoutX="392.0" layoutY="127.0" onAction="#sortFromGuruh" prefHeight="25.0" prefWidth="117.0" promptText="Guruh" style="-fx-font-weight: bold;" AnchorPane.leftAnchor="392.0" AnchorPane.topAnchor="127.0" />
+      <TableView fx:id="tb_view" layoutX="16.0" layoutY="155.0" onMouseClicked="#click_table1" opacity="0.8" prefHeight="248.0" prefWidth="493.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="155.0">
+        <columns>
+            <TableColumn fx:id="tb_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+          <TableColumn fx:id="tb_tr" prefWidth="38.99998474121094" text="№" />
+          <TableColumn fx:id="tb_fish" prefWidth="206.99998474121094" text="F.I.SH" />
+            <TableColumn fx:id="tb_guruh" prefWidth="79.0" text="GURUH" />
+            <TableColumn fx:id="tb_qarz" prefWidth="82.00003051757812" text="QARZ" />
+            <TableColumn fx:id="tb_sana" prefWidth="85.0" text="SANA" />
+        </columns>
+      </TableView>
+      <AnchorPane fx:id="insertPuipleWindow" disable="true" layoutX="557.0" layoutY="88.0" prefHeight="365.0" prefWidth="599.0" style="-fx-border-color: #FFFFFF;">
+         <children>
+            <Label layoutX="198.0" layoutY="14.0" text="O'QUVCHI QO'SHISH">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="edt_find" layoutX="8.0" layoutY="53.0" onKeyReleased="#find" prefHeight="39.0" prefWidth="348.0" promptText="F.I.SH">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="edt_telNumber" layoutX="364.0" layoutY="53.0" prefHeight="39.0" prefWidth="224.0" promptText="TELEFON RAQAM ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cbox_choose" layoutX="456.0" layoutY="104.0" prefHeight="30.0" prefWidth="132.0" promptText="GURUH" style="-fx-font-weight: bold; -fx-text-fill: blue;" AnchorPane.topAnchor="103.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <TableView fx:id="tb2_view" layoutX="8.0" layoutY="106.0" onMouseClicked="#click_table2" opacity="0.8" prefHeight="248.0" prefWidth="441.0" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="105.0">
+              <columns>
+                  <TableColumn fx:id="tb2_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+                <TableColumn fx:id="tb2_tr" prefWidth="56.0" text="№" />
+                <TableColumn fx:id="tb2_fish" prefWidth="199.0" text="O'QUVCHI" />
+                  <TableColumn fx:id="tb2_tel" prefWidth="100.0" text="TEL" />
+                  <TableColumn fx:id="tb2_sana" prefWidth="84.0" text="SANA" />
+              </columns>
+            </TableView>
+            <Button fx:id="btn_insertPuiple" layoutX="456.0" layoutY="331.0" mnemonicParsing="false" onAction="#insert_puipleToGroup" opacity="0.9" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to right bottom, #61F6F2 0%,#1656EF);" styleClass="btn" text="KIRITISH" AnchorPane.bottomAnchor="12.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <DatePicker fx:id="date_picker" layoutX="456.0" layoutY="290.0" prefHeight="30.0" prefWidth="132.0" promptText="QAYD SANA" AnchorPane.bottomAnchor="63.0" />
+            <Button fx:id="hide" layoutX="680.0" layoutY="7.0" mnemonicParsing="false" onAction="#hide_insertPuipleWindow" style="-fx-background-color: #FFFFFF; -fx-border-radius: 0 1px 0 10px; -fx-background-radius: 0 1px 0 10px; -fx-border-color: #FFFFFF;" styleClass="chiqish1" text="X" textFill="#dbdbdb" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="lb_oquvchiID" layoutX="513.0" layoutY="187.0" text="lb_oquvchiID" visible="false" />
+         </children>
+      </AnchorPane>
+      <PasswordField fx:id="password" layoutX="18.0" layoutY="14.0" prefHeight="25.0" prefWidth="33.0" promptText="passwrd" visible="false" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="14.0" />
+      <Button layoutX="16.0" layoutY="403.0" mnemonicParsing="false" onAction="#delete_puipleFromGroup" prefHeight="39.0" prefWidth="493.0" text="TANLANGANI GURUHDAN O'CHIRISH" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="403.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <HBox fx:id="create_groupWindow" disable="true" layoutX="16.0" layoutY="86.0" prefHeight="33.0" prefWidth="493.0" style="-fx-border-color: #FFFFFF;">
+         <children>
+            <TextField fx:id="edt_guruhNomi" prefHeight="30.0" prefWidth="183.0" promptText="NOMINI KIRITING">
+               <HBox.margin>
+                  <Insets left="3.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="edt_guruhNarxi" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="183.0" promptText="NARXINI KIRITING">
+               <HBox.margin>
+                  <Insets left="3.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#insertNewgroup" opacity="0.9" prefHeight="30.0" prefWidth="119.0" style="-fx-background-color: linear-gradient(to right bottom, #61F6F2 0%,#1656EF);" styleClass="btn" text="Kiritish">
+               <HBox.margin>
+                  <Insets left="3.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="lb_removID" layoutX="534.0" layoutY="211.0" text="lb_removID" visible="false" />
+      <Label fx:id="lb_puipleName" layoutX="534.0" layoutY="228.0" prefHeight="17.0" prefWidth="98.0" text="lb_puipleName" visible="false" />
+      <Label fx:id="lb_guruhName" layoutX="534.0" layoutY="262.0" prefHeight="17.0" prefWidth="83.0" text="lb_guruhName" visible="false" />
+      <Label fx:id="lb_fanID" layoutX="551.0" layoutY="122.0" text="lb_fanID" visible="false" />
+      <AnchorPane fx:id="edit_window" layoutX="18.0" layoutY="449.0" prefHeight="106.0" prefWidth="493.0" style="-fx-border-color: #FFFFFF;" AnchorPane.topAnchor="449.0">
+         <children>
+            <TextField fx:id="edt_edit_fish" layoutX="8.0" layoutY="2.0" prefHeight="30.0" prefWidth="233.0" promptText="F.I.SH" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="25.0" />
+            <TextField fx:id="edt_edit_phone_number" layoutX="236.0" layoutY="2.0" prefHeight="30.0" prefWidth="149.0" promptText="TELEFON RAQAM" AnchorPane.topAnchor="25.0" />
+            <Button layoutX="366.0" layoutY="5.0" mnemonicParsing="false" onAction="#updatePuipleData" opacity="0.9" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: linear-gradient(to right bottom ,#E53C05 0%, #F6C961 );" styleClass="btn" text="O'ZGARTIRISH" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator layoutX="135.0" layoutY="83.0" prefHeight="5.0" prefWidth="200.0" AnchorPane.topAnchor="58.0" />
+            <ComboBox fx:id="cbox_edit" layoutX="43.0" layoutY="67.0" onAction="#click_cbox" prefHeight="30.0" prefWidth="167.0" promptText="GURUHNI TANLANG" style="-fx-font-weight: bold;" AnchorPane.topAnchor="67.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <Button fx:id="btn_changeGroup" disable="true" layoutX="247.0" layoutY="71.0" mnemonicParsing="false" onAction="#change_group" opacity="0.9" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: linear-gradient(to right bottom ,#E53C05 0%, #F6C961 );" styleClass="btn" text="GURUHNI O'ZGARTIRISH" AnchorPane.topAnchor="67.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="lb_lastQarz" layoutX="15.0" layoutY="6.0" prefHeight="17.0" prefWidth="61.0" text="lb_lastQarz" visible="false" />
+            <Label fx:id="lb_lastTel" layoutX="119.0" layoutY="6.0" text="lb_lastTel" visible="false" />
+            <Label fx:id="lb_puipleID" layoutX="304.0" layoutY="6.0" text="lb_puipleID" visible="false" />
+            <Label fx:id="lb_lastSana" layoutX="374.0" layoutY="6.0" text="lb_lastSana" visible="false" />
+            <Label layoutX="173.0" layoutY="4.0" prefHeight="20.0" prefWidth="125.0" text="TAXRIRLASH">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ToolBar layoutX="532.0" layoutY="208.0" opacity="0.8" prefHeight="27.0" prefWidth="1340.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#open_davomad" text="Davomad + -">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#insertNewPuiple" prefHeight="25.0" prefWidth="132.0" text="O'quvchi qo'shish">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#openCreateGroupWindow" prefHeight="25.0" prefWidth="105.0" text="Guruh yaratish">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#about" text="Dastur haqida">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

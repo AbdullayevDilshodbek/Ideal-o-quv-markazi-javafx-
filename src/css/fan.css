@@ -1,0 +1,31 @@
+#panel_insert_fan{
+    -fx-border-radius: 1;
+    -fx-border-width: 2;
+}
+#panel_edit_fan{
+    -fx-border-width: 2;    
+    -fx-border-radius:1;
+}
+#id, #name{
+    -fx-font-size: 16;
+    -fx-font-style: bold;
+}
+#fan_background{
+	-fx-background-image: url("../img/sample.png");
+}
+
+#btn_add {
+    -fx-background-color: linear-gradient(to right bottom, #42BFF5 0%,#324BA7);
+    -fx-font-weight: bold;
+ }
+#btn_add:hover{
+    -fx-opacity: 1;
+}
+#btn_fan_edit:hover,#fan_form_add:hover,#fan_form_edit:hover{
+    -fx-opacity: 1;
+}
+#chiqish:hover{
+    -fx-background-color: red!important;
+    -fx-border-color: red!important;
+    -fx-text-fill: #ffffff;
+}

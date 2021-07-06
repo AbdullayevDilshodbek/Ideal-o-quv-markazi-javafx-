@@ -1,0 +1,15 @@
+#body {
+    -fx-background-image: url("../img/sample.png");
+}
+.piechart{
+	-fx-background-radius: 10;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+.chiqish1:hover{
+    -fx-background-color: red!important;
+    -fx-border-color: red!important;
+    -fx-text-fill: #ffffff;
+}
+.btn:hover{
+    -fx-opacity: 1;
+}

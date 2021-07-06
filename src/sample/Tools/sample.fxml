@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="menu1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1340.0" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Tools.Controller">
+   <children>
+      <AnchorPane layoutX="770.0" layoutY="106.0" opacity="0.8" prefHeight="500.0" prefWidth="374.0" style="-fx-background-radius: 0 20 20 0; -fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="105.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 10;">
+               <image>
+                  <Image url="@../../img/icon.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="85.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salom, do'stim!">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#ace2df" layoutX="43.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agar siz hali ro'yhatdan o'tmagan bo'lsangiz,">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#ace2df" layoutX="67.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sizni admin xonasiga taklif qilamiz!">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="100.0" opacity="0.8" prefHeight="500.0" prefWidth="570.0" style="-fx-background-radius: 20 0 0 20; -fx-background-color: linear-gradient(to right bottom ,#F8F8F8,#FFFFFF); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label layoutX="186.0" layoutY="61.0" text="Profilga kirish" textFill="#1caba7">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="edt_login" labelFloat="true" layoutX="150.0" layoutY="178.0" prefHeight="40.0" prefWidth="270.0" promptText="Login" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 8; -fx-border-color: #4d4d4d; -fx-border-radius: 8; -fx-padding: 0 8;" text="sanjarbek">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextField>
+            <JFXPasswordField fx:id="edt_parol" labelFloat="true" layoutX="150.0" layoutY="245.0" prefHeight="40.0" prefWidth="270.0" promptText="Parol" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 8; -fx-border-color: #4d4d4d; -fx-border-radius: 8; -fx-padding: 0 8;" text="sanjarbek" />
+            <Label layoutX="194.0" layoutY="144.0" text="Login va parolingizni kiriting" textFill="#979797">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btn1" defaultButton="true" layoutX="221.0" layoutY="312.0" mnemonicParsing="false" onAction="#btn1" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="KIRISH" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lb_connect_info" layoutX="120.0" layoutY="429.0" text="WI-FI YO'Q YOKI SERVER ISHLAMAYAPTI!" textFill="#f20000">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Label>
+            <JFXToggleButton fx:id="swtch" layoutX="211.0" layoutY="441.0" onAction="#reConnect" prefHeight="45.0" prefWidth="150.0" text="Qayta ulanish" />
+            <JFXProgressBar fx:id="spinner1" layoutX="185.0" layoutY="416.0" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="WeiteWindow" layoutX="8.0" layoutY="18.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00965E;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="brend" alignment="CENTER" layoutX="620.0" layoutY="163.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text="P" textFill="#00965e">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="71.0" />
+               </font>
+            </Label>
+            <Label fx:id="compnyName" layoutX="456.0" layoutY="306.0" text="Persenal Developer" textFill="WHITE">
+               <font>
+                  <Font name="Bauhaus 93" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="shiyor" layoutX="540.0" layoutY="387.0" prefHeight="65.0" prefWidth="253.0" text="Kelajak o'z qo'lingizda IDEAL" textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+               <font>
+                  <Font name="Microsoft JhengHei UI Light" size="20.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="delay" layoutX="142.0" layoutY="163.0" prefHeight="100.0" prefWidth="200.0" />
+            <JFXSpinner fx:id="spinner" layoutX="642.0" layoutY="496.0" />
+            <Label fx:id="kuting" layoutX="612.0" layoutY="556.0" text="BIR OZ KUTING..." textFill="#fcf3f3">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

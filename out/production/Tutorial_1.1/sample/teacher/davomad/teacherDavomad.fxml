@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="body" prefHeight="700.0" prefWidth="1330.0" stylesheets="@../../../css/adminDavomad.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.teacher.davomad.TeacherDavomad">
+   <children>
+      <ComboBox fx:id="cbox_guruh" layoutX="460.0" layoutY="119.0" onAction="#sort_guruh" opacity="0.9" prefHeight="34.0" prefWidth="162.0" promptText="GURUHNI TANLANG" />
+      <TableView fx:id="tb_view" layoutX="116.0" layoutY="153.0" opacity="0.8" prefHeight="414.0" prefWidth="940.0">
+        <columns>
+          <TableColumn fx:id="tb_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn fx:id="tb_tr" prefWidth="85.00001525878906" text="№" />
+          <TableColumn fx:id="tb_fish" prefWidth="243.0" text="ISM VA SHARFI" />
+            <TableColumn fx:id="tb_guruh" prefWidth="187.0" text="GURUH" />
+            <TableColumn fx:id="tb_qarz" prefWidth="176.0" text="QARZ" />
+            <TableColumn fx:id="tb_sana" prefWidth="157.3333740234375" text="SANA" />
+            <TableColumn fx:id="tb_belgilash" prefWidth="91.3333740234375" text="BELGILASH" />
+        </columns>
+      </TableView>
+      <Button layoutX="116.0" layoutY="567.0" mnemonicParsing="false" onAction="#davomadniKiritish" opacity="0.8" prefHeight="50.0" prefWidth="940.0" text="BAZAGA YUBORISH">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="lb_fanID" layoutX="97.0" layoutY="44.0" text="lb_fanID" visible="false" />
+      <Label fx:id="lb_teacherID" layoutX="97.0" layoutY="77.0" text="lb_teacherID" visible="false" />
+   </children>
+</AnchorPane>

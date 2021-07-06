@@ -1,0 +1,35 @@
+#btn{
+    -fx-background-color: rgb(0, 0, 0);
+    -fx-font-size: 20;
+}
+#imgFon{
+    -fx-background-image: url("/img/admin-logo.jpg");
+}
+#fonn{
+        -fx-opacity: 0.7;
+        -fx-background-color: rgb(0, 0, 0);
+}
+#llogo{
+    -fx-border-radius: 50;
+    /*-fx-border-top-radius:50;*/
+    /*-fx-border-color: #FFFFFF;*/
+    -fx-background-image: url("../img/kingg.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: 53;
+    -fx-background-color: #000000;
+}
+#menu2{
+    -fx-border-radius: 20;
+    -fx-border-color: #FFFFFF;
+}
+#lb_login, #lb_par{
+    -fx-background-color: rgb(0, 0, 0);
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size: 15;
+    -fx-border-radius: 10;
+    -fx-border-color: #FFFFFF; 
+}
+#body{
+    -fx-background-image: url("/img/admin-logo.jpg");
+}

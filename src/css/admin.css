@@ -1,0 +1,45 @@
+#pane1 {
+    -fx-background-image: url("../img/slide11.jpg") !important;
+    -fx-background-size: 100%;
+}
+
+#pane2 {
+    -fx-background-image: url("../img/slide22.jpg") !important;
+    -fx-background-size: 100%;
+}
+
+#pane3 {
+    -fx-background-image: url("../img/slide44.png") !important;
+}
+
+#pane4 {
+    -fx-background-image: url("../img/slide33.png") !important;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%;
+}
+
+#allBTN:hover {
+    -fx-background-color: #ff895e !important;
+}
+
+#image_admin{
+    -fx-background-size: 100%;
+}
+
+.admin_menu {
+    -fx-background-image: url("../img/sample.png");
+}
+
+#top_menu {
+    /*-fx-effect: linear-gradient(to right bottom ,#54C0A6,#3DABA8);*/
+    /*-fx-background-color:#2D74E6;*/
+}
+
+.button {
+    /* -fx-border-color: rgb(0, 0, 0);
+     -fx-background-color: #2D74E6;
+     -fx-text-fill: rgb(255, 255, 255);
+ */
+}
+
+

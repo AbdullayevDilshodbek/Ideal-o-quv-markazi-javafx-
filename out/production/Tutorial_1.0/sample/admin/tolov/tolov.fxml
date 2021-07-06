@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="tolov_body" prefHeight="730.0" prefWidth="1354.0" stylesheets="@../../../css/tolov.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.tolov.Tolov">
+   <children>
+      <TextField fx:id="edt_search" layoutX="14.0" layoutY="14.0" onKeyReleased="#search" opacity="0.8" prefHeight="30.0" prefWidth="302.0" promptText="FISH,FAN,O'QITUVCHI" style="-fx-fill: red;" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TableView fx:id="tb_view1" layoutX="10.0" layoutY="50.0" onMouseClicked="#put_date_tb2" opacity="0.8" prefHeight="391.0" prefWidth="662.0" AnchorPane.topAnchor="50.0">
+        <columns>
+            <TableColumn fx:id="t1_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+          <TableColumn fx:id="t1_tr" prefWidth="46.00001525878906" text="№" />
+          <TableColumn fx:id="t1_oquvchi" prefWidth="181.00003051757812" text="O'QUVCHI" />
+            <TableColumn fx:id="t1_fan" prefWidth="72.99996948242188" text="FAN" />
+            <TableColumn fx:id="t1_oqituvchi" prefWidth="114.0" text="O'QITUVCHI" />
+            <TableColumn fx:id="t1_guruh" prefWidth="68.0" text="GURUH" />
+            <TableColumn fx:id="t1_qarz" prefWidth="67.0" text="QARZ" />
+            <TableColumn fx:id="t1_chegirma" prefWidth="29.0" text="\%" />
+            <TableColumn fx:id="t1_sana" prefWidth="81.0" text="SANA" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="677.0" layoutY="468.0" minWidth="-Infinity" prefHeight="191.0" prefWidth="337.5" style="-fx-background-radius: 10; -fx-background-color: linear-gradient(to right bottom ,#0078D7,#3DABA8);">
+         <children>
+            <Label layoutX="15.0" layoutY="45.0" text="F.I.SH" textFill="#fffafa" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="45.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_fish" layoutX="101.0" layoutY="45.0" prefHeight="20.0" prefWidth="207.0" text="To'liq Sharfi" textFill="#fffafa" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="45.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="71.0" text="O'qituvchi" textFill="#fffafa" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="71.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_teacher" layoutX="101.0" layoutY="71.0" prefHeight="20.0" prefWidth="154.0" text="Ustozi" textFill="#fffafa" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="71.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="123.0" text="Guruh" textFill="#fffafa" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="123.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_guruh" layoutX="101.0" layoutY="123.0" text="Guruhi" textFill="#fffafa" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="123.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="156.0" text="To'lov" textFill="#fffafa" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="156.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="edt_tolovMiqdori" layoutX="102.0" layoutY="151.0" opacity="0.8" prefWidth="120.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 7; -fx-fill: white; -fx-background-color: linear-gradient(to right bottom ,#3DABA8,#0078D7);" text="0" AnchorPane.topAnchor="151.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+            <Label layoutX="15.0" layoutY="98.0" prefHeight="20.0" prefWidth="41.0" text="Fan" textFill="#fffafa" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="98.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label fx:id="lb_fan" layoutX="103.0" layoutY="98.0" prefHeight="20.0" prefWidth="119.0" text="Fan nomi" textFill="#fffafa" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="98.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="oquvchi_guruhID" layoutX="463.0" layoutY="35.0" prefHeight="20.0" prefWidth="122.0" text="oquvchi_guruhID" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_qarz" layoutX="463.0" layoutY="67.0" prefHeight="17.0" prefWidth="108.0" text="lb_qarz" visible="false" />
+            <Label fx:id="lb_oquvchiID" layoutX="472.0" layoutY="91.0" text="lb_oquvchiID" visible="false" />
+            <Label fx:id="lb_guruhID" layoutX="472.0" layoutY="116.0" prefHeight="17.0" prefWidth="69.0" text="lb_guruhID" visible="false" />
+<!--            <ImageView disable="true" fitHeight="50.0" fitWidth="66.0" layoutX="256.0" layoutY="108.0" onMouseClicked="#insert_tolov" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.9), 10, 0, 0, 0);">-->
+<!--               <image>-->
+<!--                  <Image url="@../../../img/unnamed.png" />-->
+<!--               </image>-->
+<!--            </ImageView>-->
+            <Text fill="#f5f5f5" layoutX="239.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TO'LOV QILISH">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Label contentDisplay="CENTER" layoutX="126.0" layoutY="14.0" text="TO'LOV QILISH" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button id="btn_tolov" fx:id="insert_tolov" layoutX="252.0" layoutY="108.0" mnemonicParsing="false" onAction="#insert_tolov" opacity="0.8" prefHeight="50.0" prefWidth="58.0" style="-fx-background-radius: 100; -fx-background-color: #44A0BC;" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <ComboBox fx:id="cbox_fan" layoutX="319.0" layoutY="10.0" onAction="#put_teachers" opacity="0.8" prefHeight="30.0" prefWidth="108.0" promptText="FAN" AnchorPane.leftAnchor="319.0" AnchorPane.topAnchor="10.0" />
+      <ComboBox fx:id="cbox_teacher" layoutX="429.0" layoutY="10.0" onAction="#put_group" opacity="0.8" prefHeight="30.0" prefWidth="122.0" promptText="O'QITUVCHI" AnchorPane.leftAnchor="429.0" AnchorPane.topAnchor="10.0" />
+      <ComboBox fx:id="cbox_guruh" layoutX="560.0" layoutY="10.0" onAction="#saralash" opacity="0.8" prefHeight="30.0" prefWidth="108.0" promptText="GURUH" />
+      <TableView fx:id="tb_tolov" layoutX="679.0" layoutY="50.0" onMouseClicked="#put_updateTolov" opacity="0.8" prefHeight="391.0" prefWidth="672.0" AnchorPane.topAnchor="50.0">
+         <columns>
+            <TableColumn fx:id="t3_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn fx:id="t3_tr" prefWidth="34.0" text="№" />
+            <TableColumn fx:id="t3_oquvchi" prefWidth="179.0" text="O'QUVCHI" />
+            <TableColumn fx:id="t3_fan" prefWidth="84.0" text="FAN" />
+            <TableColumn fx:id="t3_oqituvchi" prefWidth="113.0" text="O'QITUVCHI" />
+            <TableColumn fx:id="t3_guruh" prefWidth="82.0" text="GURUH" />
+            <TableColumn fx:id="t3_tolov" prefWidth="103.0" text="TO'LOV" />
+            <TableColumn fx:id="t3_sana" prefWidth="82.0" text="SANA" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tb_view" layoutX="10.0" layoutY="468.0" onMouseClicked="#put_date_tb" opacity="0.8" prefHeight="191.0" prefWidth="662.0" style="-fx-background-radius: 10;" AnchorPane.topAnchor="468.0">
+         <columns>
+            <TableColumn fx:id="t_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn id="tb3_colmns" fx:id="t_oquvchi" prefWidth="177.00001525878906" style="-fx-background-radius: 7;" text="O'QUVCHI" />
+            <TableColumn id="tb3_colmns" fx:id="t_fan" prefWidth="86.0" style="-fx-background-radius: 7;" text="FAN" />
+            <TableColumn id="tb3_colmns" fx:id="t_oqituvchi" prefWidth="116.0" style="-fx-background-radius: 7;" text="O'QITUVCHI" />
+            <TableColumn id="tb3_colmns" fx:id="t_guruh" prefWidth="82.0" style="-fx-background-radius: 7;" text="GURUH" />
+            <TableColumn id="tb3_colmns" fx:id="t_qarz" prefWidth="77.0" style="-fx-background-radius: 7; -fx-background-color: linear-gradient(to right bottom ,#C08164,#D1A938); -fx-fill: #FFFFFF;" text="QARZ" />
+            <TableColumn id="tb3_colmns" fx:id="t_chegirma" prefWidth="35.0" style="-fx-background-radius: 7; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" text="\%" />
+            <TableColumn id="tb3_colmns" fx:id="t_sana" prefWidth="87.0" style="-fx-background-radius: 7;" text="SANA" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="1017.0" layoutY="468.0" opacity="0.8" prefHeight="191.0" prefWidth="327.0" style="-fx-background-color: linear-gradient(to right bottom ,#C15F31,#D0AD37); -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="82.0" layoutY="14.0" text="TO'LOVNI O'ZGARTIRISH" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="47.0" text="F.I.SH" textFill="#fcf9fa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="71.0" text="O'qituvchi" textFill="#fcf9fa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="100.0" text="Fan" textFill="#fcf9fa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="124.0" text="Guruh" textFill="#fcf9fa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="153.0" text="Yangi to'lov" textFill="#fcf9fa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="up_fish" layoutX="116.0" layoutY="46.0" prefHeight="20.0" prefWidth="184.0" text="To'liq Sharfi" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="up_teacher" layoutX="116.0" layoutY="70.0" text="Ustozi" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="up_fan" layoutX="114.0" layoutY="99.0" text="Fan nomi" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="up_guruh" layoutX="114.0" layoutY="123.0" text="Guruhi" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="up_tolovMiqdori" layoutX="114.0" layoutY="150.0" prefHeight="20.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right bottom,#D0AD37 ,#C15F31); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 7;" text="0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></TextField>
+            <Label layoutX="260.0" layoutY="155.0" text="TASDIQLASH" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="up_tolovID" layoutX="271.0" layoutY="16.0" text="ID" visible="false" />
+            <Button id="btn_tolov" fx:id="update_tolov" disable="true" layoutX="271.0" layoutY="108.0" mnemonicParsing="false" onAction="#updateTolov" prefHeight="50.0" prefWidth="58.0" style="-fx-background-radius: 100; -fx-background-color: #C69C54;" />
+            <Label fx:id="lb_lastTolov" layoutX="257.0" layoutY="39.0" text="lb_lastTolov" visible="false" />
+            <Label fx:id="lb_lastQarz" layoutX="257.0" layoutY="63.0" text="lb_lastQarz" visible="false" />
+            <Label fx:id="lb_lastOquvGuruhID" layoutX="257.0" layoutY="82.0" text="lb_lastOquvGuruhID" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

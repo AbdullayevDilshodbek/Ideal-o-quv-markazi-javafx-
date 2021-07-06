@@ -1,0 +1,19 @@
+#tb_group {
+	-fx-font-size:18;
+	-fx-border-width: 3;
+	-fx-font-weight: bold;
+	-fx-border-radius: 10;
+	/*-fx-background-color: #A6E22E;*/
+}
+
+#guruh_background{
+	-fx-background-image: url("../img/sample.png");
+}
+.chiqish1:hover{
+    -fx-background-color: red!important;
+    -fx-border-color: red!important;
+    -fx-text-fill: #ffffff;
+}
+.guruh_opacity:hover{
+	-fx-opacity: 1;
+}

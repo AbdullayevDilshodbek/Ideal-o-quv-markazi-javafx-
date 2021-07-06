@@ -1,0 +1,28 @@
+.cBox{
+	-fx-font-weight: bold;
+}
+.separat{
+	-fx-background-color: #000000;
+}
+.oquvchi_opacity:hover{
+	-fx-opacity: 1;
+}
+.oquvchi_chiqish{
+	-fx-background-color: white;
+	-fx-background-radius:  0 1px 0 10px;
+	-fx-border-radius:  0 1px 0 10px;
+	-fx-border-color:  #E5E5E5;
+	-fx-text-fill: #dbdbdb;
+}
+.oquvchi_chiqish:hover{
+    -fx-background-color: red!important;
+    -fx-border-color: red!important;
+    -fx-text-fill: #ffffff;
+}
+.oquvchi_korish_chiqish:hover{
+	-fx-background-color: #C41B12!important;
+	-fx-border-color: #C41B12!important;
+}
+#body{
+	-fx-background-image: url("../img/sample.png");
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="fan_background" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../css/fan.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.Fan">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <TextField fx:id="edt_search" layoutX="29.0" layoutY="10.0" onKeyReleased="#search" prefHeight="40.0" prefWidth="410.0" promptText="Qidiruv..." AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="10.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Button fx:id="btn_add" layoutX="452.0" layoutY="10.0" mnemonicParsing="false" onAction="#open_add_panel" opacity="0.8" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 16px;" text="Qo'shish" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TableView fx:id="tb_fan" layoutX="29.0" layoutY="58.0" onMouseClicked="#sde" opacity="0.8" prefHeight="312.0" prefWidth="716.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="88.0" text="ID" />
+                <TableColumn fx:id="name" prefWidth="437.0" sortable="false" text="FAN" />
+              </columns>
+            </TableView>
+            <AnchorPane fx:id="panel_insert_fan" layoutX="29.0" layoutY="376.0" opacity="0.8" prefHeight="201.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CDCDCD; -fx-background-radius: 2;">
+               <children>
+                  <TextField id="fan_form_add_input" fx:id="edt_insert" layoutX="60.0" layoutY="61.0" onKeyReleased="#check_fan" prefHeight="40.0" prefWidth="260.0" promptText="Fanni nomini kiriting.." style="-fx-border-color: #447BEF;" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="61.0" />
+                  <Button id="fan_form_add" fx:id="btn_insert" layoutX="92.0" layoutY="116.0" mnemonicParsing="false" onAction="#insert" opacity="0.9" prefHeight="40.0" prefWidth="166.0" style="-fx-font-size: 16px; -fx-background-color: linear-gradient(to right bottom, #324BA7 0%, #42BFF5); -fx-font-family: arial;" text="Fan qo'shish" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_info" layoutX="75.0" layoutY="165.0" prefHeight="30.0" prefWidth="222.0" textFill="#447bef">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="131.0" layoutY="14.0" text="Fan qo'shish" textFill="#447bef">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_edit_fan" layoutX="405.0" layoutY="376.0" opacity="0.8" prefHeight="201.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #E5E5E5; -fx-background-radius: 2px;">
+               <children>
+                  <TextField id="fan_form_edit_input" fx:id="edt_new_name" layoutX="52.0" layoutY="61.0" prefHeight="40.0" prefWidth="260.0" promptText="Yangi nomni kiriting.." style="-fx-border-color: #E46334;" />
+                  <Button id="fan_form_edit" fx:id="btn_change" layoutX="118.0" layoutY="120.0" mnemonicParsing="false" onAction="#btn_change_fan_name" opacity="0.9" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: linear-gradient(to right bottom ,#E53C05 0%, #F6C961 );" text="O'zgartirish" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label layoutX="125.0" layoutY="14.0" prefHeight="27.0" prefWidth="107.0" text="Fan taxrirlash" textFill="#e46334">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="temporary_id" layoutX="23.0" layoutY="19.0" text="Label" visible="false" />
+                  <Label fx:id="lb_info2" layoutX="72.0" layoutY="160.0" prefHeight="27.0" prefWidth="216.0" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Button id="chiqish" fx:id="btn_hide2" layoutX="320.0" layoutY="-1.0" mnemonicParsing="false" onAction="#btn_hide2" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 1px 0 10px; -fx-border-color: #E5E5E5; -fx-border-radius: 0 1px 0 10px;" text="X" textFill="#dbdbdb" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button id="btn_fan_edit" layoutX="611.0" layoutY="10.0" mnemonicParsing="false" onAction="#open_taxrir" opacity="0.8" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #F6C961 0%,#E53C05);" text="Taxrirlash" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

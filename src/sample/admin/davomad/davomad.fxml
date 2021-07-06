@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="body" prefHeight="680.0" prefWidth="1340.0" stylesheets="@../../../css/adminDavomad.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.davomad.Davomad">
+   <children>
+      <TableView fx:id="tb_view" layoutX="14.0" layoutY="53.0" opacity="0.8" prefHeight="409.0" prefWidth="700.0">
+        <columns>
+          <TableColumn fx:id="tb_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+          <TableColumn fx:id="tb_tr" prefWidth="63.0" text="№" />
+            <TableColumn fx:id="tb_oquvchi" prefWidth="228.00001525878906" text="O'QUVCHI" />
+            <TableColumn fx:id="tb_teacher" prefWidth="180.0" text="O'QITUVCHI" />
+            <TableColumn fx:id="tb_guruh" prefWidth="93.0" text="GURUH" />
+            <TableColumn fx:id="tb_sana" prefWidth="78.0" text="SANA" />
+            <TableColumn fx:id="tb_status" prefWidth="57.0" text="STATUS" />
+        </columns>
+      </TableView>
+      <ToolBar opacity="0.8" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <items>
+            <ComboBox layoutX="10.0" layoutY="13.0" prefHeight="25.0" prefWidth="175.0" promptText="O'QITIVCHINI TANLANG" visibleRowCount="5" />
+            <ComboBox layoutX="164.0" layoutY="13.0" prefHeight="25.0" prefWidth="158.0" promptText="GURUHNI TANLANG" visibleRowCount="5" />
+            <ComboBox fx:id="cbox_yil" layoutX="318.0" layoutY="13.0" onAction="#sortFromYil" prefWidth="150.0" promptText="YILNI TANLANG" visibleRowCount="5" />
+            <ComboBox fx:id="cbox_oy" layoutX="472.0" layoutY="13.0" prefWidth="150.0" promptText="OYNI TANLANG" visibleRowCount="5" />
+            <ComboBox fx:id="cbox_kun" layoutX="626.0" layoutY="13.0" prefWidth="150.0" promptText="KUNI TANLANG" visibleRowCount="5" />
+         </items>
+      </ToolBar>
+      <PieChart fx:id="chart_yil" layoutX="15.0" layoutY="459.0" opacity="0.8" prefHeight="206.0" prefWidth="341.0" style="-fx-background-color: linear-gradient(to right bottom ,#0078D7,#3DABA8);" styleClass="piechart" title="Ideal yil statistika" />
+      <PieChart fx:id="chart_oy" layoutX="364.0" layoutY="460.0" opacity="0.8" prefHeight="205.0" prefWidth="348.0" style="-fx-background-color: linear-gradient(to right bottom ,#0078D7,#3DABA8);" styleClass="piechart" title="Ideal kun statistikasi" />
+      <Pane fx:id="paneView" layoutX="721.0" layoutY="53.0" prefHeight="614.0" prefWidth="616.0" />
+   </children>
+</AnchorPane>

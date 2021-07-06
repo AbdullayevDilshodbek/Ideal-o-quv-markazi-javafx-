@@ -1,0 +1,37 @@
+#tb_teacher :hover{
+        -fx-font-style: bold;
+}
+#tb_teacher{
+    -fx-font-size: 16;
+    -fx-font-style: bold;
+    -fx-border-color: rgb(42, 199, 102);
+}
+#panel_add_teacher{
+    -fx-border-color: rgb(0, 0, 0);
+    -fx-border-width: 2;
+    -fx-border-radius: 1;
+}
+#comboBox2{
+    -fx-font-style: bold; 
+}
+#teacher_background{
+	-fx-background-image: url("../img/sample.png");
+}
+#btn_add {
+    -fx-background-color: linear-gradient(to right bottom, #42BFF5 0%,#324BA7);
+    
+}
+#btn_add:hover{
+    -fx-opacity: 1;
+}
+#btn_teacher_edit:hover{
+    -fx-opacity: 1;
+}
+#chiqish:hover{
+    -fx-background-color: red!important;
+    -fx-border-color: red!important;
+    -fx-text-fill: #ffffff;
+}
+.teacher_opacity:hover{
+	-fx-opacity: 1;
+}

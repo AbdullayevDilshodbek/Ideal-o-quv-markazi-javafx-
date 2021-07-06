@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="body" prefHeight="700.0" prefWidth="1330.0" stylesheets="@../../../css/adminDavomad.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.teacher.davomad.TeacherDavomad">
+   <children>
+      <ComboBox fx:id="cbox_guruh" layoutX="288.0" layoutY="113.0" onAction="#sort_guruh" opacity="0.9" prefHeight="34.0" prefWidth="162.0" promptText="GURUHNI TANLANG" />
+      <TableView fx:id="tb_view" layoutX="23.0" layoutY="159.0" opacity="0.8" prefHeight="414.0" prefWidth="1258.0">
+        <columns>
+          <TableColumn fx:id="tb_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn fx:id="tb_tr" prefWidth="56.666656494140625" text="№" />
+          <TableColumn fx:id="tb_fish" prefWidth="210.33331298828125" text="ISM VA SHARFI" />
+            <TableColumn fx:id="tb_guruh" prefWidth="124.66668701171875" text="GURUH" />
+            <TableColumn fx:id="tb_qarz" prefWidth="100.66668701171875" text="QARZ" />
+            <TableColumn fx:id="tb_sana" prefWidth="150.0" text="SANA" />
+            <TableColumn fx:id="tb_belgilash" maxWidth="116.0" prefWidth="116.0" text="BELGILASH" />
+            <TableColumn fx:id="kun1" minWidth="0.0" prefWidth="102.66668701171875" text="1-kun avval" />
+            <TableColumn fx:id="kun2" minWidth="0.0" prefWidth="102.66668701171875" text="2-kun avval" />
+            <TableColumn fx:id="kun3" minWidth="0.0" prefWidth="102.66668701171875" text="3-kun avval" />
+            <TableColumn fx:id="kun4" minWidth="0.0" prefWidth="92.3333740234375" text="4-kun avval" />
+            <TableColumn fx:id="kun5" minWidth="0.0" prefWidth="92.3333740234375" text="5-kun avval" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="24.0" layoutY="569.0" mnemonicParsing="false" onAction="#davomadniKiritish" prefHeight="50.0" prefWidth="1258.0" style="-fx-background-color: #499C54;" text="BAZAGA YUBORISH" textFill="#f8f8f8">
+         <font>
+            <Font name="Microsoft Sans Serif" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <Label fx:id="lb_fanID" layoutX="97.0" layoutY="44.0" text="lb_fanID" visible="false" />
+      <Label fx:id="lb_teacherID" layoutX="97.0" layoutY="77.0" text="lb_teacherID" visible="false" />
+      <Button layoutX="71.0" layoutY="49.0" mnemonicParsing="false" onAction="#test1" text="Button" />
+   </children>
+</AnchorPane>

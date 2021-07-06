@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="menu1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1340.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane layoutX="770.0" layoutY="106.0" opacity="0.8" prefHeight="500.0" prefWidth="374.0" style="-fx-background-radius: 0 20 20 0; -fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="105.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 100;">
+               <image>
+                  <Image url="@../img/icon.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="85.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salom, do'stim!">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#ace2df" layoutX="43.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agar siz hali ro'yhatdan o'tmagan bo'lsangiz,">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#ace2df" layoutX="67.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sizni admin xonasiga taklif qilamiz!">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="100.0" opacity="0.8" prefHeight="500.0" prefWidth="570.0" style="-fx-background-radius: 20 0 0 20; -fx-background-color: linear-gradient(to right bottom ,#F8F8F8,#FFFFFF); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label layoutX="186.0" layoutY="61.0" text="Profilga kirish" textFill="#1caba7">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="edt_login" layoutX="150.0" layoutY="178.0" prefHeight="40.0" prefWidth="270.0" promptText="Login" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 8;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="112.0" layoutY="183.0" opacity="0.8" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 50; -fx-background-color: #E9E9E9;">
+               <image>
+                  <Image url="@../img/login.jpg" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="edt_parol" layoutX="150.0" layoutY="230.0" prefHeight="40.0" prefWidth="270.0" promptText="Parol" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 8;" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="112.0" layoutY="235.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/password.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="194.0" layoutY="144.0" text="Login va parolingizni kiriting" textFill="#979797">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn1" defaultButton="true" layoutX="221.0" layoutY="312.0" mnemonicParsing="false" onAction="#btn1" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="KIRISH" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="lb_connect_info" layoutX="150.0" layoutY="428.0" text="WI-FI YO'Q YOKI SERVER ISHLAMAYAPTI!" textFill="#f20000">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

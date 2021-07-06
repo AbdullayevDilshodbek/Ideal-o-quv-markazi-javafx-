@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1360.0" styleClass="admin_menu" stylesheets="@../../css/admin.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.Admin">
+   <children>
+      <AnchorPane fx:id="top_menu" layoutX="422.0" layoutY="117.0" prefHeight="246.0" prefWidth="1360.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" layoutX="566.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IDEAL">
+               <font>
+                  <Font name="Chiller" size="96.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <Separator layoutX="302.0" layoutY="249.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="249.0" />
+      <AnchorPane layoutX="326.0" layoutY="295.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="301.0">
+         <children>
+            <Button fx:id="btn_fan" contentDisplay="TOP" layoutX="20.0" layoutY="1.0" mnemonicParsing="false" onAction="#fan" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="Fan" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="270.0" layoutY="1.0" mnemonicParsing="false" onAction="#teacher" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="O'qituvchi" textFill="WHITE" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_guruh" layoutX="520.0" layoutY="1.0" mnemonicParsing="false" onAction="#open_guruh" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="Guruh" textFill="WHITE" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="770.0" layoutY="1.0" mnemonicParsing="false" onAction="#open_oquvchi" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="O'quvchi" textFill="WHITE" AnchorPane.leftAnchor="770.0" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onAction="#open_tolov" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="To'lov" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="275.0" layoutY="200.0" mnemonicParsing="false" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="KARZINKA" textFill="WHITE" AnchorPane.leftAnchor="275.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="525.0" layoutY="200.0" mnemonicParsing="false" onAction="#open_maosh" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="Maosh $" textFill="WHITE" AnchorPane.leftAnchor="525.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font size="32.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="770.0" layoutY="201.0" mnemonicParsing="false" onAction="#open_davomad" opacity="0.8" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right bottom ,#3592C4,#3DABA8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-background-radius: 10;" text="Davomat" textFill="WHITE" AnchorPane.leftAnchor="770.0" AnchorPane.topAnchor="201.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
