@@ -8,35 +8,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Build & run
 
-There is no Maven/Gradle build and no test suite. The project is an IntelliJ IDEA module (`Tutorial_1.0.iml`):
-
-- JDK **8** with bundled JavaFX (the module's SDK is named `8`). Newer JDKs need OpenJFX added separately.
-- Libraries are checked in under `liberarys/` (sic): `jfoenix-9.0.4.jar`, `poi-4.1.2.jar`, `mysql-connector-java-5.1.23-bin.jar`.
-- Entry point: `sample.Tools.Main` (also set in `src/META-INF/MANIFEST.MF`).
-- The IntelliJ jar artifact `Tutorial_1.1:jar` builds to `out/artifacts/Tutorial_1_1_jar/`. `out/` is build output.
-
-Manual build without IntelliJ (JDK 8 with JavaFX). FXML/CSS/images must be copied next to the classes because they are loaded from the classpath:
+Maven project (`pom.xml`), Java **17**, JavaFX from OpenJFX artifacts. There is no test suite.
 
 ```sh
-CP="liberarys/*"
-mkdir -p build && javac -encoding UTF-8 -cp "$CP" -d build $(find src -name '*.java')
-rsync -a --exclude '*.java' src/ build/
-java -cp "build:$CP" sample.Tools.Main
+./run.sh             # loads .env, then runs `mvn javafx:run` from the repo root
+mvn compile          # build
+mvn javafx:run       # run the app without .env (not plain `java -jar`)
+mvn package          # thin jar in target/ (dependencies not bundled)
 ```
 
-Run it from the repo root. Some paths are relative to the working directory (`file:src/img/icon.png`, `text.css`, the exported `.xls` files).
+- Entry point: `sample.Tools.Main`.
+- Run from the repo root: `text.css` (see below) and the exported `.xls` files are read/written relative to the working directory.
+- Standard layout: Java in `src/main/java/sample/...`; FXML in `src/main/resources/sample/...` (same package path as its controller), shared `css/` and `img/` at the resources root. FXML/CSS reference them by relative paths (`@../../../css/x.css`), so keep the directory depth when moving files. Load images from the classpath (`new Image("/img/icon.png")`), not `file:` paths.
+- JFoenix 9.0.10 needs the `--add-opens` flags configured on `javafx-maven-plugin`; add more there if a new JFoenix control throws `InaccessibleObjectException`.
+- `JFXProgressBar` is incompatible with JavaFX 17 (its skin calls the removed `NodeHelper.treeShowingProperty`) — use the standard `ProgressBar`.
+- MySQL connector must stay on 5.1.x: the code imports `com.mysql.jdbc.Connection`, which 8.x removed.
 
 ## Database
 
-- MySQL/MariaDB at `jdbc:mysql://localhost/ideal`, user `root` / password `root`, hardcoded in `sample/Tools/MysqlConnection.java`.
-- The schema and seed data are in `ideal.sql` (phpMyAdmin dump). Import it into a database named `ideal`.
+- MySQL/MariaDB, configured in `sample/Tools/MysqlConnection.java` from environment variables: `DB_URL` (default `jdbc:mysql://localhost/ideal`), `DB_USER` / `DB_PASSWORD` (default `root` / `root`). MySQL 8+/9 needs `?useSSL=false&allowPublicKeyRetrieval=true` on the URL. Local values go in `.env` (gitignored; template in `.env.example`); `.env` is `source`d by bash, so values containing `&` must be quoted.
+- Create a fresh database with `mysql -u root -p < database.sql` (idempotent: `CREATE ... IF NOT EXISTS`, `INSERT IGNORE`). It seeds an admin user (login `admin` / password `admin`) and the subject list. `ideal.sql` is the old phpMyAdmin dump with real 2020 data; `database.sql` keeps the same schema. All columns stay `VARCHAR` because the code reads and writes strings (e.g. it can write `''` into `guruh.fan_id`).
 - Tables: `fan`, `teacher`, `guruh`, `oquvchilar`, `oquvchi_guruh` (student↔group join), `tolov`, `datee`, `maosh_history`, `davomad`, `karzinka`.
 
 ## Architecture
 
-All code lives under `src/sample/`. Each feature is a package with the same parts:
+All code lives under the `sample` package. Each feature is a package with the same parts:
 
-- `*.fxml`: the view, bound to its controller with `fx:controller`. Stylesheets come from `src/css/` (`@../../../css/x.css`).
+- `*.fxml`: the view, bound to its controller with `fx:controller`. Stylesheets come from `css/` at the resources root (`@../../../css/x.css`).
 - **Controller** (e.g. `Fan.java`, `Guruh.java`): implements `Initializable` and handles the UI events.
 - **`*Modul` / `*Model`**: a plain data holder for `TableView` rows, using `PropertyValueFactory`, so getter names must match the column bindings.
 - **`*Query` / `*Querys`**: raw JDBC. Each method calls `MysqlConnection.conDb()` for a new connection and runs `PreparedStatement`s. There is no ORM and no DAO layer.

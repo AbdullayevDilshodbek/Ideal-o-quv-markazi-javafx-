@@ -1,0 +1,9 @@
+target/
+
+# IDE and IDE build output
+.idea/
+*.iml
+out/
+
+# Local secrets
+.env
